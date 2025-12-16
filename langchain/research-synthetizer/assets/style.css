@@ -1,0 +1,271 @@
+/* ===============================
+   GLOBAL
+=================================*/
+body {
+    background: linear-gradient(180deg, #f8fafc, #f1f5f9);
+    font-family: Inter, system-ui, sans-serif;
+    color: #0f172a;
+}
+
+/* ===============================
+   GRID
+=================================*/
+#app-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#app-grid.collapsed {
+    grid-template-columns: 56px 1fr;
+}
+
+/* ===============================
+   SIDEBAR
+=================================*/
+#sidebar {
+    padding: 24px;
+    background: linear-gradient(180deg, #f9fafb, #f1f5f9);
+    border-right: 1px solid #cbd5e1;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#sidebar h2 {
+    color: #0f172a;
+    font-size: 1.3em;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+#sidebar h3 {
+    color: #334155;
+    font-size: 1em;
+    margin: 8px 0 8px 0;
+    font-weight: 600;
+}
+
+#sidebar hr {
+    border: none;
+    border-top: 1px solid #cbd5e1;
+    margin: 12px 0;
+}
+
+#app-grid.collapsed #sidebar > *:not(#sidebar-toggle) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ===============================
+   SIDEBAR TOGGLE
+=================================*/
+#sidebar-toggle {
+    position: absolute;
+    top: 18px;
+    right: -14px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: #1e3a8a;
+    color: #f8fafc;
+    z-index: 10;
+    box-shadow: 0 3px 8px rgba(15, 23, 42, 0.35);
+}
+
+#sidebar-toggle:hover {
+    background: #172554;
+}
+
+/* ===============================
+   REPORTS LIST
+=================================*/
+#reports-list {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 450px);
+    min-height: 200px;
+}
+
+#reports-list .wrap {
+    background: transparent;
+    border: none;
+    padding: 0;
+    max-height: 100%;
+}
+
+#reports-list input[type="radio"] {
+    display: inline-block !important;
+    accent-color: #1e3a8a;
+}
+
+/* CARD STYLE */
+#reports-list label {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding: 10px 12px !important;
+    margin-bottom: 8px !important;
+
+    background: #eef2f7 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 8px !important;
+
+    cursor: pointer !important;
+    transition: background 0.15s ease, border-color 0.15s ease !important;
+
+    font-size: 0.85em !important;
+    color: #1e293b !important;
+    line-height: 1.45 !important;
+
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+#reports-list label:hover {
+    background: #e5e7eb !important;
+}
+
+/* SELECTED */
+#reports-list input[type="radio"]:checked + label {
+    background: #e8edf5 !important;
+    border-color: #94a3b8 !important;
+    color: #1e3a8a !important;
+    font-weight: 600 !important;
+}
+
+/* ===============================
+   MAIN (UNCHANGED)
+=================================*/
+#main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #f8fafc, #f1f5f9);
+    gap: 12px;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* ===============================
+   TOPIC DISPLAY (UNCHANGED)
+=================================*/
+#main > .markdown:first-child {
+    background: linear-gradient(
+        135deg,
+        rgba(30, 58, 138, 0.12),
+        rgba(99, 102, 241, 0.10)
+    );
+    border-left: 4px solid rgba(30, 58, 138, 0.7);
+    border-radius: 10px;
+    padding: 14px 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    font-size: 1.02em;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+/* ===============================
+   CHATBOT (UNCHANGED)
+=================================*/
+#main-chatbot {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+/* ===============================
+   INPUT ROW
+=================================*/
+#input-row {
+    flex-shrink: 0;
+    gap: 12px;
+    align-items: stretch;
+}
+
+#input-row .textbox {
+    margin: 0;
+}
+
+#input-row .textbox textarea {
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    min-height: 50px !important;
+    max-height: 50px !important;
+}
+
+#input-row .textbox textarea:focus {
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.18);
+}
+
+/* ===============================
+   PRIMARY BUTTON – RESEARCH
+=================================*/
+#research-btn {
+    background: linear-gradient(135deg, #1e3a8a, #172554) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    border: none !important;
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.4) !important;
+    font-weight: 600 !important;
+    min-height: 50px !important;
+    padding: 0 20px !important;
+}
+
+#research-btn:hover {
+    background: linear-gradient(135deg, #172554, #020617) !important;
+}
+
+/* ===============================
+   CHAT ACTION BUTTONS (UNCHANGED)
+=================================*/
+#main-chatbot button {
+    background: #e5e7eb !important;
+    color: #1e293b !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px;
+}
+
+#main-chatbot button:hover {
+    background: #d1d5db !important;
+}
+
+/* ===============================
+   SCROLLBARS
+=================================*/
+#sidebar::-webkit-scrollbar,
+#reports-list::-webkit-scrollbar,
+#main-chatbot::-webkit-scrollbar {
+    width: 8px;
+}
+
+#sidebar::-webkit-scrollbar-track,
+#reports-list::-webkit-scrollbar-track,
+#main-chatbot::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+#sidebar::-webkit-scrollbar-thumb,
+#reports-list::-webkit-scrollbar-thumb,
+#main-chatbot::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+#sidebar::-webkit-scrollbar-thumb:hover,
+#reports-list::-webkit-scrollbar-thumb:hover,
+#main-chatbot::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+
+""",
