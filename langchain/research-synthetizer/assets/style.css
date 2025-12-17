@@ -141,7 +141,7 @@ body {
 }
 
 /* ===============================
-   MAIN (UNCHANGED)
+   MAIN
 =================================*/
 #main {
     padding: 20px;
@@ -154,7 +154,7 @@ body {
 }
 
 /* ===============================
-   TOPIC DISPLAY (UNCHANGED)
+   TOPIC DISPLAY 
 =================================*/
 #main > .markdown:first-child {
     background: linear-gradient(
@@ -172,7 +172,7 @@ body {
 }
 
 /* ===============================
-   CHATBOT (UNCHANGED)
+   CHATBOT 
 =================================*/
 #main-chatbot {
     flex: 1;
@@ -227,7 +227,7 @@ body {
 }
 
 /* ===============================
-   CHAT ACTION BUTTONS (UNCHANGED)
+   CHAT ACTION BUTTONS 
 =================================*/
 #main-chatbot button {
     background: #e5e7eb !important;
